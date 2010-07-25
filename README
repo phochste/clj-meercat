@@ -14,6 +14,11 @@ This is still pre-alpha code. Work in progress..
 4. $ lein repl
    (use 'clj-meercat.core)
    (boot)
+5. Connect browser to http://localhost:8080
+6. Play a bit with resources/public/query.html
+   I use Christophe Grand's <a href="http://github.com/cgrand/enlive">enlive</a>
+   library to parse templates. Based on 'id' and 'class' attributes you can 
+   tweak which information you want to display in the search results.
 
 ## License
 
