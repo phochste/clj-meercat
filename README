@@ -1,0 +1,22 @@
+# clj-meercat
+
+A SOLR-based library catalog discovery tool in Clojure
+
+## Usage
+
+This is still pre-alpha code. Work in progress..
+
+## Installation
+
+1. Install lein
+2. Install solr
+3. Run solr on port 8983
+4. $ lein repl
+   (use 'clj-meercat.core)
+   (boot)
+
+## License
+
+Copyright (C) 2010 Patrick Hochsenbach <Patrick.Hochstenbach@UGent.be>
+
+Distributed under the Eclipse Public License, the same as Clojure.

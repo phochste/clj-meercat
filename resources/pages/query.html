@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<title>Cl-Meercat</title>
+
+<style type="text/css">
+ .query.results {
+   border-width: 1px;
+   border-style: solid;
+   margin-bottom: 5px;
+ }
+ .query.results td {
+   width: 200px;
+ }
+ .result.id {
+   width: 200px;
+ }
+</style>
+
+</head>
+
+<body>
+<h1>Cl-Meercat</h1>
+
+<form action="query" method="GET">
+ Find: <input type="text" name="q" value="" class="param q"/>
+ <select name="year" class="param year">
+   <option value="1900">1900</option>
+   <option value="1910">1910</option>
+   <option value="1920">1920</option>
+   <option value="1930">1930</option>
+ </select>
+ <select name="color" class="param color">
+   <option value="red">red</option>
+   <option value="blue">blue</option>
+   <option value="green">green</option>
+ </select>
+ <br/>
+ <input type="radio" name="music" value="jazz" class="param music"/> Jazz<br/>
+ <input type="radio" name="music" value="pop" class="param music"/> Pop<br/>
+ <input type="radio" name="music" value="rock" class="param music"/> Rock<br/>
+ <br/>
+ <input type="checkbox" name="option1" value="milk" class="param option1"/> Milk<br/>
+ <input type="checkbox" name="option2" value="butter" class="param option2"/> Butter<br/>
+ <input type="submit"/>
+</form>
+
+<p>
+Searching for '<span class="param q">dna</span>' returned
+<span class="query hits">10</span> hits.
+<span class="query num">100</span> per page.
+</p>
+
+<div class="nextprev">
+ <span><a href="#" class="prev">Previous</a></span>
+ <span><a href="#" class="page">5</a></span>
+ <span><a href="#" class="page">6</a></span>
+ <span><a href="#" class="page">7</a></span>
+ <span><a href="#" class="page">8</a></span>
+ <span><a href="#" class="page">9</a></span>
+ <span><a href="#" class="page">10</a></span>
+ <span><a href="#" class="next">Next</a></span>
+</div>
+ 
+<table class="query results">
+  <tr>
+    <td class="result id">1</td>
+    <td class="result price">10.0</td>
+    <td class="result cat">10.0</td>
+    <td class="result popularity">10.0</td>
+  </tr>
+</table>
+
+<hr>
+<address></address>
+<!-- hhmts start --> Last modified: Wed Jul 21 11:21:40 CEST 2010 <!-- hhmts end -->
+</body> </html>
