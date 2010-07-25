@@ -9,10 +9,10 @@
   (-> node :attrs :class (subs (inc (count prefix))) keyword col str))
 
 (defn check-by-class
-  "The class of teh HTML checkbox/radio element contains a record key
-  (possibly having a prefix). Use this record key to read a value from
-  col and set the element to checked if needed. Return the orignal
-  HTML element if no match is found."
+  "Checks a radio/checkbox element if its class attribute contains
+  a record key that can be found in the result set 'col'. Use the
+  prefix to trim off the class attribute name.
+  Return the orignal HTML element if no match is found."
   [prefix col]
   #(let [value (-> % :attrs :value)
 	 txt (lookup-keyword-by-class % prefix col)]
@@ -21,31 +21,30 @@
        %)))
      
 (defn select-by-class
-  "The class of the HTML select element contains a record key (possibly
-  having a prefix). Use this record key to read a value from col and set
-  the correction option to 'selected'. Return the original HTML select
-  element if nothing is found."
+  "Selects a select element if its class attribute contains a record
+  key that can be found in the result set 'col'. Use the prefix to
+  trim off the class attribute name.
+  Return the original HTML select element if nothing is found."
   [prefix col]
   #(if-let [txt (lookup-keyword-by-class % prefix col)]
      (e/at % [[:option (e/attr= :value txt)]] (e/set-attr :selected "selected"))
      %))
 
 (defn attribute-by-class
-  "The class of the HTML element contains a record key (possibly
-  having a prefix). Use this record key to read a value from col and set
-  the attribute to this value. Return the original HTML element if
-  nothing is found." 
-
+  "Set the value of an HTML element to the content of the class
+  attribute looked up in the result set 'col'. Use the prefix to
+  trim off the class attribute name.
+  Return the original HTML element if nothing is found." 
   [prefix attribute col]
   #(if-let [txt (lookup-keyword-by-class % prefix col)]
      ((e/set-attr attribute txt) %)
      %))
 
 (defn content-by-class
-  "The class attribute of the HTML element contains a record key (possibly
-  having a prefix). Use this record key to read a value out of col and
-  set the content of the HTML element to this value. Return the orginal
-  HTML element if nothing is found."
+  "Set the content of an HTML element to the content of the class
+  attribute looked up in the result set 'col'. Use the prefix to
+  trim off the class attribute name.
+  Return the orginal HTML element if nothing is found."
   [prefix col]
   #(if-let [txt (lookup-keyword-by-class % prefix col)]
      ((e/content txt) %)
